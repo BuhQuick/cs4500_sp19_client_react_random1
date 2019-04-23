@@ -10,8 +10,10 @@ import FAQAnswerDetails from './FAQAnswerDetails'
 import Users from './Users'
 import ServiceQuestions from "./ServiceQuestions";
 import ServiceQuestionDetails from "./ServiceQuestionDetails";
+import ServiceAnswerDetails from "./ServiceAnswerDetails";
+import ServiceAnswer from "./ServiceAnswer";
+import ServicesProviderSearch from "./serviceProviderSearch/ServiceProviderSearch";
 const servicesService = ServiceService.getInstance()
-
 
 const Admin = () =>
     <div>
@@ -34,7 +36,11 @@ const Admin = () =>
                     <Link to="/admin/service-questions">Service Questions</Link>
                     <br/>
                     <Link to="/admin/service-questions/1">Service Questions Details</Link>
-
+                    <br/>
+                    <Link to="/admin/service-answers/">Service Answers</Link>
+                    <br/>
+                    <Link to="/admin/service-answers/1">Service Answers Details</Link>
+                    <br/>
                 </div>
                 <div className="col-9">
                     <Route
@@ -58,6 +64,14 @@ const Admin = () =>
                         exact
                         component={FAQAnswerDetails}/>
                     <Route
+                        path="/admin/service-answers/"
+                        exact
+                        component={ServiceAnswer}/>
+                    <Route
+                        path="/admin/service-answers/:ids"
+                        exact
+                        component={ServiceAnswerDetails}/>
+                    <Route
                         path="/admin/users"
                         exact
                         component={Users}/>
@@ -69,6 +83,10 @@ const Admin = () =>
                         path="/admin/service-questions/:id"
                         exact
                         component={ServiceQuestionDetails}/>
+                    <Route
+                        path="/admin/services/:serviceId"
+                        exact
+                        component={ServicesProviderSearch}/>
                 </div>
             </div>
         </Router>
