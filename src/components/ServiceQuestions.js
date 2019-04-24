@@ -201,7 +201,7 @@ class ServiceQuestions extends React.Component {
                     {
                         this.state.serviceQuestions.slice(((this.state.pageNumber * this.state.itemsPerPage) - this.state.itemsPerPage), ((this.state.pageNumber * this.state.itemsPerPage) - 1))
                             .map(serviceQuestion =>
-                                <tr key={serviceQuestion.id} onClick={this.props.history.push("/admin/service-questions/" + serviceQuestion.id)}>
+                                <tr key={serviceQuestion.id}>
                                     <td>{serviceQuestion.title}</td>
                                     <td>{serviceQuestion.question}</td>
                                     <td>
